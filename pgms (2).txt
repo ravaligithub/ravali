@@ -1,0 +1,119 @@
+pointer increment
+
+#include<stdio.h>
+int main(){   
+ int number=8;         
+ int *p;     
+ p=&number;     
+ printf("Address of p variable is %u \n",p);         
+ p=p+6;       
+ printf("After adding 6 %u \n",p);        
+ return 0;   
+}    
+------------------------------------------------------------------
+pointer address 
+
+#include<stdio.h>
+int main(){   
+ int number=8;         
+ int *p; 
+ int **p1;
+ p=&number;
+ p1=&p;
+ printf("Address of p variable is %u \n",p);         
+printf("Address of number variable is %x \n",&number);       
+ printf("Address of p variable is %x \n",p);       
+ printf("Value of *p variable is %d \n",*p);       
+ printf("Address of p2 variable is %x \n",p1);       
+ printf("Value of **p2 variable is %d \n",*p);    
+}
+
+-----------------------------------------------------------------
+file read
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    FILE *fp;
+    char c;
+    clrscr();
+    fp=fopen("file.txt","r");
+    while((c=fgetc(fp))!=EOF){
+        printf("%c",c);
+    
+    }
+    rewind(fp);
+    while((c=fgetc(fp))!=EOF){
+        printf("%c",c);
+    }
+    fclose(fp);
+    getch();
+}
+
+-------------------------------------------------------------------
+Error handling
+
+#include<stdio.h>
+#include<errno.h>
+#include<string.h>
+int main()
+{
+    FILE *fp;
+    fp=fopen("errorfile.txt","r");
+    printf("value of errno:%d\n",errno);
+    printf("The error message is :%s\n",strerror(errno));
+    perror("message from perror");
+    return 0;
+}
+
+--------------------------------------------------------------------
+program using enum functions
+
+#include <stdio.h> 
+ enum State {WORKING = 0, FAILED, FREEZED}; 
+ enum State currState = 2; 
+   
+ enum State Find()) { 
+     return currState; 
+ } 
+   
+int main() { 
+    (Find() == WORKING)? printf("WORKING"): printf("NOT WORKING"); 
+    return 0; 
+ } 
+--------------------------------------------------------------------
+program using enum
+
+#include<stdio.h>
+enum month {jan=1,feb=2,oct=10,nov,dec};
+int main()
+{
+    printf("%d %d %d %d %d",jan,feb,oct,nov,dec);
+    return 0;
+}
+ 
+----------------------------------------------------------------------- 
+ program using command line 
+ 
+#include <stdio.h> 
+
+ int main(int ac, char *v[]) 
+ { 
+     int i; 
+     if( ac >= 2 ) 
+     { 
+     printf("The arguments supplied are:\n"); 
+         for(i = 1; i < ac; i++) 
+         { 
+             printf("%s\t", v[i]); 
+         } 
+     } 
+     else 
+     { 
+        printf("argument list is empty.\n"); 
+} 
+     return 0; 
+ } 
+
+

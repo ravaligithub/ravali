@@ -1,0 +1,131 @@
+call by value
+
+#include<stdio.h>
+int add(int x, int y)
+{
+    int c;
+    c=x+y;
+    return c;
+}
+int main(){
+    int d;
+    d=add(10,20);
+    printf("%d",d);
+}
+  
+ 
+------------------------------------------
+
+call by reference
+
+#include<stdio.h>
+int add(int *x, int *y)
+{
+    int c;
+    c=*x+*y;
+    return c;
+}
+int main(){
+    int d;
+    int a=10,b=20;
+    d=add(&a,&b);
+    printf("%d",d);
+}
+
+----------------------------------------------------
+
+nested function
+
+#include <stdio.h>
+char* bbc()
+{
+    static char b[200]="bbc executed";
+    return b;
+}
+char* abc()
+{
+    printf("%s\n",bbc());
+	  static char a[200]="abc executed";
+	return a;
+	
+}
+ 
+int main()
+{
+    
+ char z[200]="main executed";
+	printf("%s\n", abc());
+	printf("%s",z);
+	return 0;
+}
+
+--------------------------------------------------------
+program using global var ,constant var,#define,ternary
+
+
+#include <stdio.h>
+#define pi 3.14
+const int i=30;
+int a=10;
+int abc(int a)
+ {
+     int c;
+     
+     c=a*a;
+     return c;
+ }
+int main()
+{
+int x;
+x=abc(a);
+ int v,b=20;
+ a=30;
+ v=b*a*pi*i;
+ printf("%d\n%d",v,x);
+ int h=v>=6000?100:0;
+ printf("%d",h);
+ }
+ 
+ ------------------------------------------------------------
+ 
+program using string functions
+
+#include <stdio.h>
+#include<string.h>
+int main()
+ {
+     char a[10]="hello";
+     char b[10]="world";
+     char c[10];
+     char x[10]="this is";
+     char y[10]="a string";
+     strcat (x, y);
+     printf("%s",x);
+     printf("\nlength of string= %d",strlen(x));
+     printf("\ncopied string = %s",strcpy(c,a));
+     printf("\n compared the string and value is %d",strcmp(a,b));
+ }
+ 
+ ---------------------------------------------------------
+ program using static
+ 
+ #include <stdio.h>
+int abc(int a ,int i )
+{
+    int d;
+    d=a*i;
+    return d;
+}
+int main()
+ {
+   static int a=22;
+     int c;
+     a++;
+     printf("%d\n",a);
+     c=abc(a,20);
+     printf("%d",c);
+ }
+ 
+ --------------------------------------------------------
+ program using auto
+ 
